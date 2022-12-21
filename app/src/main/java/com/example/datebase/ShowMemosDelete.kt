@@ -69,7 +69,7 @@ fun ShowMemosDelete(onClickButton: ()-> Unit = {}){
                                     showDialog.value = false
                                 }
                             ){
-                                Text(text = "削除")
+                                Text(text = "削除する")
                             }
                         },
                         dismissButton = {
