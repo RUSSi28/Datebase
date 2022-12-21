@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "499727823629",
+    "project_id": "datebase-1722f",
+    "storage_bucket": "datebase-1722f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499727823629:android:f325fe39a0a20bb80bf644",
+        "android_client_info": {
+          "package_name": "com.example.datebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "499727823629-k3dqgu22bal63o0bpjnpcd55d6c2jha5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAotl5mvlDzQaseXcVpr92blov4TGk4ftA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "499727823629-k3dqgu22bal63o0bpjnpcd55d6c2jha5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
