@@ -154,7 +154,7 @@ fun MultipleItemsBottomNavigation(navController: NavHostController) {
 
     BottomAppBar(backgroundColor = Color(61, 164, 233, 255)) {
         BottomNavigation {
-            items.forEachIndexed { index, item ->//これが何かわからない矢印
+            items.forEachIndexed { index, item ->
                 BottomNavigationItem(
                     modifier = Modifier.background(Color(61, 164, 233, 255)),
                     icon = { Icon(item.icon, contentDescription = item.dist) },
