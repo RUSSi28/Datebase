@@ -24,6 +24,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.datebase.ui.theme.DatebaseTheme
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.coroutineScope
@@ -39,6 +40,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             val navController = rememberNavController()
+            StatusBarColor()
             Scaffold(
                 topBar = { TopBar() },
                 bottomBar = { MultipleItemsBottomNavigation(navController = navController)}
@@ -171,6 +173,14 @@ fun MultipleItemsBottomNavigation(navController: NavHostController) {
         }
     }
 
+}
+
+@Composable
+fun StatusBarColor(){
+    val systemUiController = rememberSystemUiController()
+    SideEffect {
+        systemUiController.setStatusBarColor(Color(61,164,233,255))
+    }
 }
 
 
