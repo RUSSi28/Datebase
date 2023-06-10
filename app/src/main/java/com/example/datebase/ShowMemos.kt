@@ -8,6 +8,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -53,40 +54,53 @@ fun ShowMemos(onClickButton: ()-> Unit = {}){
     )
     {
         for (memoDate in memoList){
-            Column(
-                //modifier = Modifier.clickable {  }
-            ) {
-                Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .background(color = Color.LightGray),
-                    contentAlignment = Alignment.TopStart
-                )
-                {
-                    Text(
-                        text = memoDate.date.dropLast(3),
-                        modifier = Modifier.background(Color.White)
+            Column() {
+                Surface(
+                    elevation = 7.dp,
+                    shape = RoundedCornerShape(7.dp)
+                ) {
+                    Column(
+                        //modifier = Modifier.clickable {  }
+                        modifier = Modifier.background(
+                            color = Color.LightGray,
+                            shape = RoundedCornerShape(7.dp),
+
+                            )
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth(),
+                            contentAlignment = Alignment.TopStart
                         )
+                        {
+                            Text(
+                                text = memoDate.date.dropLast(3),
+                                modifier = Modifier.background(
+                                    color = Color(255, 255, 255),
+                                    shape = RoundedCornerShape(5.dp)
+                                )
+                            )
+                        }
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth(),
+                            contentAlignment = Alignment.TopStart
+                        )
+                        {
+                            Text(text = "タイトル       \n" + memoDate.title + "\n")
+                        }
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth(),
+                            contentAlignment = Alignment.TopStart
+                        )
+                        {
+                            Text(text = "メモ内容       \n" + memoDate.memo)
+                        }
+
+                    }
                 }
-                Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .background(color = Color.LightGray),
-                    contentAlignment = Alignment.TopStart
-                )
-                {
-                    Text(text = "タイトル       \n" + memoDate.title + "\n")
-                }
-                Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .background(color = Color.LightGray),
-                    contentAlignment = Alignment.TopStart
-                )
-                {
-                    Text(text = "メモ内容       \n" + memoDate.memo)
-                }
-                Divider()
+                Spacer(modifier = Modifier.padding(10.dp))
             }
         }
     }
