@@ -20,4 +20,4 @@ https://github.com/RUSSi28/Datebase/assets/110999990/77cb3fd9-ef09-4943-993a-ce5
 ## 使用している技術
 * jetpack composeライブラリ
 * firebase(fire store)
-* > https://firebase.google.com/?hl=ja
+  > https://firebase.google.com/?hl=ja
