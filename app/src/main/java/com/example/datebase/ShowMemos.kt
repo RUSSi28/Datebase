@@ -75,7 +75,7 @@ fun ShowMemos(onClickButton: ()-> Unit = {}){
                     contentAlignment = Alignment.TopStart
                 )
                 {
-                    Text(text = "タイトル　　" + memoDate.title)
+                    Text(text = "タイトル       \n" + memoDate.title + "\n")
                 }
                 Box(
                     modifier = Modifier
@@ -84,7 +84,7 @@ fun ShowMemos(onClickButton: ()-> Unit = {}){
                     contentAlignment = Alignment.TopStart
                 )
                 {
-                    Text(text = "メモ内容　　" + memoDate.memo)
+                    Text(text = "メモ内容       \n" + memoDate.memo)
                 }
                 Divider()
             }
