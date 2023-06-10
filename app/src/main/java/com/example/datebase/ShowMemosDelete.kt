@@ -55,37 +55,44 @@ fun ShowMemosDelete(onClickButton: ()-> Unit = {}){
         for (memoDate in memoListDelete){
             Column(
                 modifier = Modifier.clickable {
-                    showDialog.value = true
+
                 }
             ) {
-                if (showDialog.value == true){
-                    //SimpleAlertDialog(memoDate, showDialog.value)
-                    AlertDialog(
-                        onDismissRequest = { /*TODO*/ },
-                        confirmButton = {
-                            TextButton(
-                                onClick = {
-                                    db.collection("memos").document("${memoDate.documentId}").delete()
-                                    showDialog.value = false
-                                }
-                            ){
-                                Text(text = "削除する")
-                            }
-                        },
-                        dismissButton = {
-                            TextButton(
-                                onClick = { showDialog.value = false }
-                            ) {
-                                Text(text = "キャンセル")
-                            }
-                        },
-                        title = {
-                            Text(text = "メモを削除")
-                        },
-                        text = {
-                            Text(text = "$memoDate")
-                        }
-                    )
+//                if (showDialog.value == true){
+//                    //SimpleAlertDialog(memoDate, showDialog.value)
+//                    AlertDialog(
+//                        onDismissRequest = { /*TODO*/ },
+//                        confirmButton = {
+//                            TextButton(
+//                                onClick = {
+//                                    db.collection("memos").document("${memoDate.documentId}").delete()
+//                                    showDialog.value = false
+//                                }
+//                            ){
+//                                Text(text = "削除する")
+//                            }
+//                        },
+//                        dismissButton = {
+//                            TextButton(
+//                                onClick = { showDialog.value = false }
+//                            ) {
+//                                Text(text = "キャンセル")
+//                            }
+//                        },
+//                        title = {
+//                            Text(text = "メモを削除")
+//                        },
+//                        text = {
+//                            Text(text = "$memoDate")
+//                        }
+//                    )
+//                }
+                TextButton(
+                    onClick = {
+                        db.collection("memos").document("${memoDate.documentId}").delete()
+                    }
+                ){
+                    Text(text = "削除する")
                 }
 
                 Box(
@@ -107,7 +114,7 @@ fun ShowMemosDelete(onClickButton: ()-> Unit = {}){
                     contentAlignment = Alignment.TopStart
                 )
                 {
-                    Text(text = "タイトル　　" + memoDate.title)
+                    Text(text = "タイトル       \n" + memoDate.title + "\n")
                 }
                 Box(
                     modifier = Modifier
@@ -116,7 +123,7 @@ fun ShowMemosDelete(onClickButton: ()-> Unit = {}){
                     contentAlignment = Alignment.TopStart
                 )
                 {
-                    Text(text = "メモ内容　　" + memoDate.memo)
+                    Text(text = "メモ内容       \n" + memoDate.memo)
                 }
                 Divider()
             }
