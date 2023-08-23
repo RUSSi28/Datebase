@@ -74,7 +74,7 @@ dependencies {
     debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_version"
 
     // Import the Firebase BoM
-    implementation platform('com.google.firebase:firebase-bom:31.1.0')
+    implementation platform('com.google.firebase:firebase-bom:31.5.0')
 
     // When using the BoM, you don't specify versions in Firebase library dependencies
 
