@@ -14,17 +14,15 @@
         android:theme="@style/Theme.Datebase"
         tools:targetApi="31">
 
-        <!--　勝手に増えてるので自身で追加する必要はない -->
         <receiver
-            android:name=".NewAppWidget"
+            android:name=".MyGlanceAppWidgetReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
-
             <meta-data
                 android:name="android.appwidget.provider"
-                android:resource="@xml/new_app_widget_info" />
+                android:resource="@xml/glance_my_widget_meta_data" />
         </receiver>
 
         <activity
@@ -38,16 +36,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <receiver
-            android:name=".MyGlanceAppWidgetReceiver"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-            </intent-filter>
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/glance_my_widget_meta_data" />
-        </receiver>
+
 
     </application>
 
